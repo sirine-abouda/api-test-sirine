@@ -7,10 +7,10 @@ load_dotenv()
 
 app = FastAPI()
 
-Sirine_API_KEY = os.getenv("Sirine_API_KEY")
+SIRINE_NASA_API_KEY = os.getenv("SIRINE_NASA_API_KEY")
 
 @app.get("/nasa")
 def get_nasa_image():
-    url = f"https://api.nasa.gov/planetary/apod?api_key={Sirine_API_KEY}"
+    url = f"https://api.nasa.gov/planetary/apod?api_key={SIRINE_NASA_API_KEY}"
     response = requests.get(url)
     return response.json()
